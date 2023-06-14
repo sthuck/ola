@@ -18,10 +18,10 @@ def main():
         naive_ola_distance = measure_ola_distance(g)
         algorithm_2(g)
         alog2_ola_distance = measure_ola_distance(g)
-        results.append((naive_ola_distance, alog2_ola_distance))
+        results.append((len(g.es), naive_ola_distance, alog2_ola_distance))
 
-    df = pd.DataFrame(results, columns=["naive", "algo2"])
-    print("avergage of runs is ", df.mean())
+    df = pd.DataFrame(results, columns=["edges", "naive", "algo2"])
+    print("avergage of runs is \n", df.mean())
     return df
 
 
