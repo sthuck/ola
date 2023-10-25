@@ -6,18 +6,19 @@ from typing import List, Tuple
 
 
 def main():
-    n = 100
-    p = 0.2
-    iterations = 100
+    n = 1000
+    p = 1/1000
+    iterations = 1
     print(f"n={n}, p={p}, iterations={iterations}")
+
+    g = random_graph(n=n, p=p)
+    algorithm_2(g)
+    alog2_ola_distance = measure_ola_distance(g)
 
     results: List[Tuple[int]] = []  # array of tuples, first is navie second is algo2
     for i in range(iterations):
-        g = random_graph(n=n, p=p)
         set_random_permutation(g)
         naive_ola_distance = measure_ola_distance(g)
-        algorithm_2(g)
-        alog2_ola_distance = measure_ola_distance(g)
         results.append((len(g.es), naive_ola_distance, alog2_ola_distance))
 
     df = pd.DataFrame(results, columns=["edges", "naive", "algo2"])
