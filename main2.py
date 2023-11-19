@@ -8,11 +8,11 @@ from min_expectation import min_expectation_algo
 from igraph import Graph
 
 # Define the number of iterations and the array of functions (fns)
-iterations = 10
+iterations = 1000
 start = 0.5
 stop = 10.0
 step = 0.5
-n = 100
+n = 1000
 lambda_values = np.arange(start, stop + step, step)
 
 fns = [min_expectation_algo, algorithm_2, set_random_permutation]

@@ -41,7 +41,8 @@ class MinExpectation:
 
     def select_vertex(self, iteration: int):
         # u = argmax g_v(v) for v in U
-        u: Vertex = max(self.U, key=lambda v: self.DP_V[v.index] - self.DU_V[v.index])
+        n = self.g.vcount()
+        u: Vertex = max(self.U, key=lambda v: 3*(n-iteration+1)*self.DP_V[v.index] - (n-iteration+3)*self.DU_V[v.index])
         return u
 
     def update(self, w: Vertex):
@@ -66,3 +67,4 @@ def min_expectation_algo(g: Graph) -> Graph:
         min_exp_instance.update(w_i)
 
     return g
+
