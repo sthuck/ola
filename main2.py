@@ -4,7 +4,7 @@ from utils import random_graph
 from ola import set_random_permutation, measure_ola_distance, algorithm_2
 import pandas as pd
 from typing import List, Tuple
-from min_expectation import min_expectation_algo
+from min_expectation import min_expectation_algo, min_expectation_and_replacement_algo
 from igraph import Graph
 
 
@@ -16,7 +16,7 @@ step = 0.5
 n = 1000
 lambda_values = np.arange(start, stop + step, step)
 
-fns = [min_expectation_algo, algorithm_2, set_random_permutation]
+fns = [min_expectation_algo, min_expectation_and_replacement_algo, algorithm_2, set_random_permutation]
 # Create a dictionary to store results
 results = {}
 
