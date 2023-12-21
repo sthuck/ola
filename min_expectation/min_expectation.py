@@ -25,11 +25,11 @@ class MinExpectation:
         g = self.g
         v: Vertex
         self.P = set()
-        self.U: set[Vertex] = set(g.vs) # vs<--->nodes
-        self.DP_V = [0 for v in g.vs]   # vs<--->nodes
+        self.U: set[Vertex] = set(g.vs)
+        self.DP_V = [0 for v in g.vs]
 
         # list of dU(v), where dU(v) is number of neighbors of v in U, for each v in V
-        self.DU_V = [v.degree() for v in g.vs]  # 4<--->[v.degree() for v in g.vs], vs<--->nodes
+        self.DU_V = [v.degree() for v in g.vs]
 
     # def compute_g_v(self, v: Vertex, i: int) -> float:
     #     # (3s_vi(n-j)-u_vi(n-j1 + 1) - 3E_SU + 2E_U) / 6

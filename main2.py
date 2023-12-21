@@ -16,7 +16,9 @@ step = 0.5
 n = 1000
 lambda_values = np.arange(start, stop + step, step)
 
+# fns = [min_expectation_algo, min_expectation_and_replacement_algo, algorithm_2, set_random_permutation]
 fns = [min_expectation_algo, min_expectation_and_replacement_algo, algorithm_2, set_random_permutation]
+
 # Create a dictionary to store results
 results = {}
 
