@@ -6,7 +6,7 @@ from min_expectation import min_expectation_algo
 
 def main():
     n = 1000
-    p = 1/1000
+    p = 1/2
     iterations = 1
     print(f"n={n}, p={p}, iterations={iterations}")
 
@@ -22,12 +22,12 @@ def main():
     for i in range(iterations):
         set_random_permutation(g)
         naive_ola_distance = measure_ola_distance(g)
-        results.append((len(g.es), naive_ola_distance, alog2_ola_distance))
+        results.append((len(g.es), naive_ola_distance, alog2_ola_distance, min_expectation_ola_distance))
 
-    df = pd.DataFrame(results, columns=["edges", "naive", "algo2"])
-    print("avergage of runs is \n", df.mean())
+    df = pd.DataFrame(results, columns=["edges", "naive", "algo2", "min-exp"])
+    print("average of runs is \n", df.mean())
     return df
 
 
 if __name__ == "__main__":
-    main()
+     main()

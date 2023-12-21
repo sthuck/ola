@@ -7,6 +7,7 @@ from typing import List, Tuple
 from min_expectation import min_expectation_algo
 from igraph import Graph
 
+
 # Define the number of iterations and the array of functions (fns)
 iterations = 1000
 start = 0.5

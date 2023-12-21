@@ -1,1 +1,2 @@
 from .min_expectation import min_expectation_algo
+from .min_exp import min_expectation_algo2

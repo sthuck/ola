@@ -17,5 +17,5 @@ def compute_distance(e: Edge) -> int:
 
 def measure_ola_distance(g: Graph) -> int:
     e: Edge
-    return sum(compute_distance(e) for e in g.es)
+    return sum(compute_distance(e) for e in g.es) # es<--->edges
 
